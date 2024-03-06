@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tasks.apps.TasksConfig',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
@@ -95,11 +96,19 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
     #}
+    #'default': {
+       # 'ENGINE': 'djongo',
+        #'NAME': 'dbtasks',
+        #'HOST': 'localhost',
+        #'PORT': 27017,
+    #}
     'default': {
-        'ENGINE': 'djongo',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbtasks',
-        'HOST': '127.0.0.1',
-        'PORT': 27017,
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
